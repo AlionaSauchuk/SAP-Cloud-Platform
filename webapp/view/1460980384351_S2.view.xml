@@ -1,0 +1,43 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.approveTravelRequests.controller.1460980384351_S2"
+	xmlns="sap.m">
+	<Page showHeader="true" title="Requester History" showFooter="true" showNavButton="true" navButtonPress="_onPageNavButtonPress">
+		<content>
+			<List mode="SingleSelectMaster" width="100%" headerText="" footerText="" backgroundDesign="Solid" showSeparators="All" growing="false"
+				growingThreshold="20" growingScrollToLoad="true" visible="true" items="{path:'/PastRequestSet', templateShareable:true}">
+				<infoToolbar>
+					<Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+						<content>
+							<Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</content>
+					</Toolbar>
+				</infoToolbar>
+				<headerToolbar/>
+				<items>
+					<ObjectListItem intro="" title="{Description}"
+						number="{path: 'Amount', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" numberUnit="{Currency}"
+						numberState="None" type="Active" selected="true" showMarkers="false">
+						<attributes>
+							<ObjectAttribute text="{Destination}" active="false" visible="true"/>
+							<ObjectAttribute text="{Dates}" active="false" visible="true"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="{Status}" state="{StatusVal}" visible="true"/>
+						</firstStatus>
+						<secondStatus/>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<OverflowToolbar width="100%" height="auto" design="Auto" enabled="true" visible="true">
+				<content>
+					<ToolbarSpacer width=""/>
+					<Button text="" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+				</content>
+			</OverflowToolbar>
+		</footer>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>

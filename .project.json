@@ -1,0 +1,28 @@
+{
+	"dataBinding": {
+		"/webapp/view/1460972029486_S0.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/1460972029486_S1.view.xml": {
+			"entitySet": "/TravelRequestSet"
+		},
+		"/webapp/view/1460980384351_S2.view.xml": {
+			"entitySet": ""
+		},
+		"/webapp/view/1461152345446_S3.view.xml": {
+			"entitySet": "/InfoSet"
+		},
+		"/webapp/view/D0_1461153265067.view.xml": {
+			"entitySet": "/TravelRequestSet"
+		},
+		"/webapp/view/P0_1460990764684.view.xml": {
+			"entitySet": "/TravelRequestSet"
+		},
+		"/webapp/view/D1_1461153528948.view.xml": {
+			"entitySet": "/TravelRequestSet"
+		},
+		"/webapp/view/D2_1461153856232.view.xml": {
+			"entitySet": ""
+		}
+	}
+}

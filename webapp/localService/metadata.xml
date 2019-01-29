@@ -1,0 +1,152 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ffa8a1d5a080770a11131dd7" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityContainer Name="ffa8a1d5a080770a11131dd7_Entities" m:IsDefaultEntityContainer="true">
+				<EntitySet Name="TravelRequestSet" EntityType="ffa8a1d5a080770a11131dd7.TravelRequest" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<AssociationSet Name="TravelRequestSubmitterSubmitter" Association="ffa8a1d5a080770a11131dd7.TravelRequestSubmitterSubmitter"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="TravelRequestSet" Role="FromRole_TravelRequestSubmitterSubmitter"/>
+					<End EntitySet="SubmitterSet" Role="ToRole_TravelRequestSubmitterSubmitter"/>
+				</AssociationSet>
+				<AssociationSet Name="TravelRequestAssignmentsCostAssignment" Association="ffa8a1d5a080770a11131dd7.TravelRequestAssignmentsCostAssignment"
+					sap:creatable="true" sap:updatable="true" sap:deletable="true">
+					<End EntitySet="TravelRequestSet" Role="FromRole_TravelRequestAssignmentsCostAssignment"/>
+					<End EntitySet="CostAssignmentSet" Role="ToRole_TravelRequestAssignmentsCostAssignment"/>
+				</AssociationSet>
+				<AssociationSet Name="TravelRequestInfosInfo" Association="ffa8a1d5a080770a11131dd7.TravelRequestInfosInfo" sap:creatable="true"
+					sap:updatable="true" sap:deletable="true">
+					<End EntitySet="TravelRequestSet" Role="FromRole_TravelRequestInfosInfo"/>
+					<End EntitySet="InfoSet" Role="ToRole_TravelRequestInfosInfo"/>
+				</AssociationSet>
+				<EntitySet Name="SubmitterSet" EntityType="ffa8a1d5a080770a11131dd7.Submitter" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="CostAssignmentSet" EntityType="ffa8a1d5a080770a11131dd7.CostAssignment" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+				<EntitySet Name="InfoSet" EntityType="ffa8a1d5a080770a11131dd7.Info" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="ApproverSet" EntityType="ffa8a1d5a080770a11131dd7.Approver" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+				<EntitySet Name="PastRequestSet" EntityType="ffa8a1d5a080770a11131dd7.PastRequest" sap:creatable="true" sap:updatable="true"
+					sap:deletable="true"/>
+			</EntityContainer>
+			<EntityType Name="TravelRequest">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Amount" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Amount"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="Destination" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Destination"/>
+				<Property Name="Dates" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Dates"/>
+				<Property Name="ActivityType" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ActivityType"/>
+				<Property Name="CommentText" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CommentText"/>
+				<Property Name="CommentDate" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="CommentDate"/>
+				<Property Name="___FK_c0d5660ecd6d44dc0bd77d82" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.TravelRequest"/>
+				<Property Name="FullAmount" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;TravelRequest\&quot;,\&quot;entityId\&quot;:\&quot;TravelRequest\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Currency\&quot;,\&quot;propertyId\&quot;:\&quot;Currency\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot; \&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;TravelRequest\&quot;,\&quot;entityId\&quot;:\&quot;TravelRequest\&quot;,\&quot;navPropName\&quot;:\&quot;\&quot;,\&quot;navPropId\&quot;:\&quot;\&quot;,\&quot;navPropMultiplicity\&quot;:null,\&quot;navPropOp\&quot;:null,\&quot;propertyName\&quot;:\&quot;Amount\&quot;,\&quot;propertyId\&quot;:\&quot;Amount\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;TravelRequest&quot;,&quot;propertyId&quot;:&quot;Currency&quot;,&quot;_id&quot;:&quot;57176c59fc3cc86f2394cf75&quot;},{&quot;navPropId&quot;:&quot;&quot;,&quot;entityId&quot;:&quot;TravelRequest&quot;,&quot;propertyId&quot;:&quot;Amount&quot;,&quot;_id&quot;:&quot;57176c59fc3cc86f2394cf74&quot;}]}"
+					sap:label="FullAmount"/>
+				<Property Name="NbCostAssignments" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:calculated="{&quot;calculation&quot;:&quot;[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;+\&quot;,\&quot;name\&quot;:\&quot;plus\&quot;,\&quot;type\&quot;:\&quot;operator\&quot;,\&quot;left\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;Cost Assignments (\&quot;,\&quot;id\&quot;:2}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;PROPERTY\&quot;,\&quot;name\&quot;:\&quot;property\&quot;,\&quot;entityName\&quot;:\&quot;CostAssignment\&quot;,\&quot;entityId\&quot;:\&quot;CostAssignment\&quot;,\&quot;navPropName\&quot;:\&quot;Assignments\&quot;,\&quot;navPropId\&quot;:\&quot;Assignments\&quot;,\&quot;navPropMultiplicity\&quot;:true,\&quot;navPropOp\&quot;:\&quot;count\&quot;,\&quot;propertyName\&quot;:\&quot;ID\&quot;,\&quot;propertyId\&quot;:\&quot;ID\&quot;,\&quot;type\&quot;:\&quot;property\&quot;,\&quot;id\&quot;:3}],\&quot;id\&quot;:1}],\&quot;right\&quot;:[{\&quot;label\&quot;:\&quot;VALUE\&quot;,\&quot;name\&quot;:\&quot;value\&quot;,\&quot;type\&quot;:\&quot;value\&quot;,\&quot;value\&quot;:\&quot;)\&quot;,\&quot;id\&quot;:4}],\&quot;id\&quot;:0}]&quot;,&quot;inputProperties&quot;:[{&quot;navPropId&quot;:&quot;Assignments&quot;,&quot;entityId&quot;:&quot;CostAssignment&quot;,&quot;propertyId&quot;:&quot;ID&quot;,&quot;_id&quot;:&quot;5727415c3174ff6717072c3a&quot;}]}"
+					sap:label="NbCostAssignments"/>
+				<NavigationProperty Name="Submitter" Relationship="ffa8a1d5a080770a11131dd7.TravelRequestSubmitterSubmitter"
+					FromRole="FromRole_TravelRequestSubmitterSubmitter" ToRole="ToRole_TravelRequestSubmitterSubmitter"/>
+				<NavigationProperty Name="Assignments" Relationship="ffa8a1d5a080770a11131dd7.TravelRequestAssignmentsCostAssignment"
+					FromRole="FromRole_TravelRequestAssignmentsCostAssignment" ToRole="ToRole_TravelRequestAssignmentsCostAssignment"/>
+				<NavigationProperty Name="Infos" Relationship="ffa8a1d5a080770a11131dd7.TravelRequestInfosInfo" FromRole="FromRole_TravelRequestInfosInfo"
+					ToRole="ToRole_TravelRequestInfosInfo"/>
+			</EntityType>
+			<Association Name="TravelRequestSubmitterSubmitter">
+				<End Type="ffa8a1d5a080770a11131dd7.TravelRequest" Multiplicity="1" Role="FromRole_TravelRequestSubmitterSubmitter"/>
+				<End Type="ffa8a1d5a080770a11131dd7.Submitter" Multiplicity="1" Role="ToRole_TravelRequestSubmitterSubmitter"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_TravelRequestSubmitterSubmitter">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="FromRole_TravelRequestSubmitterSubmitter">
+						<PropertyRef Name="___FK_c0d5660ecd6d44dc0bd77d82"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="TravelRequestAssignmentsCostAssignment">
+				<End Type="ffa8a1d5a080770a11131dd7.TravelRequest" Multiplicity="1" Role="FromRole_TravelRequestAssignmentsCostAssignment"/>
+				<End Type="ffa8a1d5a080770a11131dd7.CostAssignment" Multiplicity="*" Role="ToRole_TravelRequestAssignmentsCostAssignment"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TravelRequestAssignmentsCostAssignment">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_TravelRequestAssignmentsCostAssignment">
+						<PropertyRef Name="___FK_a1d03212892b28410bd77d82"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="TravelRequestInfosInfo">
+				<End Type="ffa8a1d5a080770a11131dd7.TravelRequest" Multiplicity="1" Role="FromRole_TravelRequestInfosInfo"/>
+				<End Type="ffa8a1d5a080770a11131dd7.Info" Multiplicity="*" Role="ToRole_TravelRequestInfosInfo"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_TravelRequestInfosInfo">
+						<PropertyRef Name="ID"/>
+					</Principal>
+					<Dependent Role="ToRole_TravelRequestInfosInfo">
+						<PropertyRef Name="___FK_d29ff446c6e9e2e10bd77d82"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityType Name="Submitter">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Org" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Org"/>
+				<Property Name="Company" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Company"/>
+				<Property Name="Address" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Address"/>
+				<Property Name="Phone" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Phone"/>
+				<Property Name="Mobile" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Mobile"/>
+				<Property Name="Email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Email"/>
+			</EntityType>
+			<EntityType Name="CostAssignment">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Desc" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Desc"/>
+				<Property Name="Category" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Category"/>
+				<Property Name="Share" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Share"/>
+				<Property Name="___FK_a1d03212892b28410bd77d82" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.TravelRequest"/>
+			</EntityType>
+			<EntityType Name="Info">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Image" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Image"/>
+				<Property Name="___FK_d29ff446c6e9e2e10bd77d82" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true"
+					sap:label="From.TravelRequest"/>
+			</EntityType>
+			<EntityType Name="Approver">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+				<Property Name="Org" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Org"/>
+			</EntityType>
+			<EntityType Name="PastRequest">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+				<Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Description"/>
+				<Property Name="Destination" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Destination"/>
+				<Property Name="Dates" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Dates"/>
+				<Property Name="Amount" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Amount"/>
+				<Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+				<Property Name="Status" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Status"/>
+				<Property Name="StatusVal" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="StatusVal"/>
+			</EntityType>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
